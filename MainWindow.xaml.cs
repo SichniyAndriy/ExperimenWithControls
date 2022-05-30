@@ -34,5 +34,43 @@ namespace WpfApp1
 		{
 			e.Handled = !int.TryParse(e.Text, out _);
 		}
+
+		private void SmallSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+		{
+			numberTextBlock.Text = smallSlider.Value.ToString("0");
+		}
+
+		private void BigSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+		{
+			numberTextBlock.Text = bigSlider.Value.ToString("000-000-0000");
+		}
+
+		private void RadioButton_Checked(object sender, RoutedEventArgs e)
+		{
+			if (sender is RadioButton radioButton){
+				numberTextBlock.Text = radioButton.Content.ToString();
+			}
+		}
+
+		private void MyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (myListBox.SelectedItem is ListBoxItem listBoxItem){
+				numberTextBlock.Text = listBoxItem.Content.ToString();
+			}
+		}
+
+		private void ReadOnlyComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			if (readOnlyComboBox.SelectedItem is ListBoxItem listBoxItem){
+				numberTextBlock.Text = listBoxItem.Content.ToString();
+			}
+		}
+
+		private void EditableComboBox_TextChanged(object sender, RoutedEventArgs e)
+		{
+			if (sender is ComboBox comboBox){
+				numberTextBlock.Text = comboBox.Text;
+			}
+		}
 	}
 }

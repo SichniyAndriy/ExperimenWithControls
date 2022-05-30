@@ -5,19 +5,46 @@
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:local="clr-namespace:WpfApp1"
 		mc:Ignorable="d"
-		Title="Experiment With Controls" Height="450" Width="800">
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="*"/>
-			<ColumnDefinition Width="*"/>
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="*"/>
-			<RowDefinition Height="*"/>
-			<RowDefinition Height=".5*"/>
-		</Grid.RowDefinitions>
-		<Label Content="Enter a number" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
-		<TextBlock x:Name="numberTextBlock" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="#" VerticalAlignment="Center" TextAlignment="Center" FontSize="24"/>
-		<TextBox x:Name="numberTextBox" HorizontalAlignment="Left" Margin="10,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="18" Text="0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="numberTextBox_TextChanged"/>
-	</Grid>
+		Title="Experiment With Controls" Height="400" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height=".5*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Enter a number" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18"/>
+        <TextBlock x:Name="numberTextBlock" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="#" VerticalAlignment="Center" TextAlignment="Center" FontSize="24"/>
+        <TextBox x:Name="numberTextBox" HorizontalAlignment="Left" Margin="10,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="18" Text="0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" TextChanged="NumberTextBox_TextChanged" PreviewTextInput="NumberTextBox_PreviewTextInput"/>
+        <ListBox x:Name="myListBox" Grid.Row="1" Margin="10,10,10,10">
+            <ListBoxItem Content="1"/>
+            <ListBoxItem Content="2"/>
+            <ListBoxItem Content="3"/>
+            <ListBoxItem Content="4"/>
+            <ListBoxItem Content="5"/>
+        </ListBox>
+        <ComboBox x:Name="readOnlyComboBox" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Grid.Column="1">
+            <ListBoxItem Content="1"/>
+            <ListBoxItem Content="2"/>
+            <ListBoxItem Content="3"/>
+            <ListBoxItem Content="4"/>
+            <ListBoxItem Content="5"/>
+        </ComboBox>
+        <ComboBox x:Name="editableComboBox" Grid.Column="1" HorizontalAlignment="Left" Margin="260,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" IsEditable="True">
+            <ListBoxItem Content="1"/>
+            <ListBoxItem Content="2"/>
+            <ListBoxItem Content="3"/>
+            <ListBoxItem Content="4"/>
+            <ListBoxItem Content="5"/>
+        </ComboBox>
+        <RadioButton Content="1" HorizontalAlignment="Left" Margin="235,49,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.028"/>
+        <RadioButton Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0,0.028" Margin="265,49,0,0"/>
+        <RadioButton Content="3" HorizontalAlignment="Left" Margin="295,49,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0.028"/>
+        <RadioButton Content="4" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0,0.028" Margin="235,0,0,0"/>
+        <RadioButton Content="5" HorizontalAlignment="Left" Margin="265,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0,0.028"/>
+        <RadioButton Content="6" HorizontalAlignment="Left" Margin="295,0,0,0" VerticalAlignment="Center"/>
+    </Grid>
 </Window>

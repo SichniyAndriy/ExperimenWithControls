@@ -25,9 +25,14 @@ namespace WpfApp1
 			InitializeComponent();
 		}
 
-		private void numberTextBox_TextChanged(object sender, TextChangedEventArgs e)
+		private void NumberTextBox_TextChanged(object sender, TextChangedEventArgs e)
 		{
 			numberTextBlock.Text = numberTextBox.Text;
+		}
+
+		private void NumberTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+		{
+			e.Handled = !int.TryParse(e.Text, out _);
 		}
 	}
 }
